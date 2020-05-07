@@ -23,4 +23,9 @@ public class UserServiceImpl implements IUserService {
     public User login(String id, String password) {
         return iUserDao.queryUserByIdAndPassword(id, password);
     }
+
+    @Override
+    public String querySalt(String id) {
+        return iUserDao.querySaltById(id);
+    }
 }

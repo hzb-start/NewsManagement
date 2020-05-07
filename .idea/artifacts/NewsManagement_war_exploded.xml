@@ -8,7 +8,7 @@
           <element id="module-output" name="NewsManagement" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="NewsManagemnet" />
+          <element id="library" level="project" name="NewsManagement" />
         </element>
       </element>
     </root>

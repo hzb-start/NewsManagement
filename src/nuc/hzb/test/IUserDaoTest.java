@@ -49,6 +49,12 @@ public class IUserDaoTest {
      */
     @Test
     public void queryUserById() {
-        System.out.println(iUserDao.queryUserById("huan"));
+        System.out.println(iUserDao.queryUserById("黄"));
+    }
+
+    @Test
+    public void querySaltById() {
+        System.out.println(iUserDao.querySaltById("huang"));
+
     }
 }

@@ -1,5 +1,6 @@
 package nuc.hzb.dao.impl;
 
+import com.sun.org.apache.xpath.internal.objects.XNull;
 import nuc.hzb.dao.IUserDao;
 import nuc.hzb.entity.User;
 import nuc.hzb.util.JdbcUtils;
@@ -43,6 +44,22 @@ public class UserDaoImpl implements IUserDao {
             JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
         }
         return user;
+    }
+
+    @Override
+    public String querySaltById(String id) {
+        String salt = null;
+        String sql = "select salt from t_user where id = ?";
+        Object[] params = {id};
+        ResultSet resultSet = JdbcUtils.executeQuery(sql, params);
+        try {
+            if (resultSet.next()) {
+                salt = resultSet.getString("salt");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return salt;
     }
 
     @Override

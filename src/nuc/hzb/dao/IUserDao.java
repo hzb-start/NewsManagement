@@ -28,4 +28,13 @@ public interface IUserDao {
      */
     boolean queryUserById(String id);
 
+
+    /**
+     * 通过用户id查看用户盐值
+     * @param id
+     * @return
+     */
+    String querySaltById(String id);
+
+
 }

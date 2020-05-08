@@ -12,6 +12,7 @@ public class News {
     private String content;
     private Date enterdate;
     private int hot;
+    private String img_path;
 
     public News() { }
 
@@ -70,6 +71,25 @@ public class News {
 
     public void setHot(int hot) {
         this.hot = hot;
+    }
+
+
+    public News(int id, String title, String author, String content, Date enterdate, int hot, String img_path) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.enterdate = enterdate;
+        this.hot = hot;
+        this.img_path = img_path;
+    }
+
+    public String getImg_path() {
+        return img_path;
+    }
+
+    public void setImg_path(String img_path) {
+        this.img_path = img_path;
     }
 
     @Override

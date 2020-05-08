@@ -1,6 +1,5 @@
 package nuc.hzb.dao.impl;
 
-import com.sun.org.apache.xpath.internal.objects.XNull;
 import nuc.hzb.dao.IUserDao;
 import nuc.hzb.entity.User;
 import nuc.hzb.util.JdbcUtils;
@@ -9,9 +8,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
+ * 实现层必须注意一点：增删改不需要关闭PreparedStatement、Connection（在工具包中已经关闭）
+ * 但是对于查询而言，由于在工具包中的返回值为ResultSet对象（确保对于所有实体类都可以使用）
+ * 当返回ResultSet对象时，意味着不能关闭ResultSet、PreparedStatement、Connection三个对象
+ * 如果关闭则获取不到ResultSet对象
+ * 因此必须在具体的实现层去关闭
  * @author 黄朝博
  */
 public class UserDaoImpl implements IUserDao {
+
+
     @Override
     public int addUser(User user) {
         int n = -1;
@@ -20,6 +26,7 @@ public class UserDaoImpl implements IUserDao {
         n = JdbcUtils.executeUpdate(sql, params);
         return n;
     }
+
 
     @Override
     public User queryUserByIdAndPassword(String id, String password) {
@@ -46,6 +53,11 @@ public class UserDaoImpl implements IUserDao {
         return user;
     }
 
+    /**
+     * 通过id查看用户注册时候生成的salt
+     * @param id 用户id
+     * @return String，失败为null
+     */
     @Override
     public String querySaltById(String id) {
         String salt = null;
@@ -58,9 +70,12 @@ public class UserDaoImpl implements IUserDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
         }
         return salt;
     }
+
 
     @Override
     public boolean queryUserById(String id) {

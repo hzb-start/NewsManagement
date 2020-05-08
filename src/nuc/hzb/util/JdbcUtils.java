@@ -101,7 +101,9 @@ public class JdbcUtils {
      *
      * @param sql
      * @param params
-     * @return 若返回-1则表示失败
+     * @return 若返回-1或0则表示失败
+     * 返回0是正常执行，但是不符合条件
+     * 返回-1是错误，并没有执行 n = preparedStatement.executeUpdate();
      */
     public static int executeUpdate(String sql, Object... params) {
         int n = -1;
@@ -123,8 +125,8 @@ public class JdbcUtils {
      * @return 若返回为null则表示没有该结果集
      */
     public static ResultSet executeQuery(String sql, Object... params) {
-        // 确保resultSet变量为null
-        System.out.println("resultSet是：" + resultSet);
+    /*    确保resultSet变量为null
+        System.out.println("resultSet是：" + resultSet);*/
         resultSet = null;
         preparedStatement = getPreparedStatement(sql, params);
         try {

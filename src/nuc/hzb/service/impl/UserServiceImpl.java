@@ -9,7 +9,10 @@ import nuc.hzb.service.IUserService;
  * @author 黄朝博
  */
 public class UserServiceImpl implements IUserService {
+
     private IUserDao iUserDao = new UserDaoImpl();
+
+
     @Override
     public int register(User user) {
         if (iUserDao.queryUserById(user.getId())) {
@@ -19,10 +22,12 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
+
     @Override
     public User login(String id, String password) {
         return iUserDao.queryUserByIdAndPassword(id, password);
     }
+
 
     @Override
     public String querySalt(String id) {

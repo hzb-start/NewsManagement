@@ -9,7 +9,6 @@ import java.util.List;
  */
 public interface INewsService {
 
-
     /**
      * 增加新闻
      * @param news

@@ -1,4 +1,4 @@
-package nuc.hzb.controller;
+package nuc.hzb.controller.not_used;
 
 import nuc.hzb.entity.User;
 import nuc.hzb.service.IUserService;

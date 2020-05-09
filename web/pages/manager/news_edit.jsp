@@ -3,7 +3,7 @@
 <head>
     <title>编辑新闻</title>
     <%--    静态包含css、jQuery文件--%>
-    <%@ include file="pages/common/head.jsp"%>
+    <%@ include file="/pages/common/head_base.jsp"%>
     <style type="text/css">
         h1 {
             text-align: center;
@@ -23,29 +23,26 @@
 <div id="header">
     <img class="logo_img" alt="" src="static/img/logo.gif">
     <span class="wel_word">编辑新闻</span>
-    <%@ include file="pages/common/manager_menu.jsp"%>
+    <%@ include file="/pages/common/manager_menu.jsp"%>
 </div>
 
 <div id="main">
-    <form action="new_manager.jsp">
+    <form action="newsServlet?action=addNews" >
         <table>
             <tr>
-                <td>名称</td>
-                <td>待定</td>
-                <td>待定</td>
-                <td>销量</td>
-                <td>热度</td>
+                <td>title</td>
+                <td>author</td>
+                <td>hot</td>
                 <td colspan="2">操作</td>
             </tr>
             <tr>
-                <td><input name="book_name" type="text" value="新闻标题"/></td>
-                <td><input name="book_price" type="text" value="30.00"/></td>
-                <td><input name="book_author" type="text" value="作者"/></td>
-                <td><input name="book_sales" type="text" value="200"/></td>
-                <td><input name="book_stock" type="text" value="300"/></td>
+                <td><input name="title" type="text" value="title"/></td>
+                <td><input name="author" type="text" value="author"/></td>
+                <td><input name="content" type="text" value="content"/></td>
                 <td><input type="submit" value="提交"/></td>
             </tr>
         </table>
+        <textarea name="content" cols="55" rows="15">content</textarea>
     </form>
 
 

@@ -53,7 +53,7 @@ public class INewsServiceTest {
      */
     @Test
     public void queryNewsById() {
-        System.out.println(iNewsService.queryNewsById(36));
+        System.out.println(iNewsService.queryNewsById(40));
     }
 
 

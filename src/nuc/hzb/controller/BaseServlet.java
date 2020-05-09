@@ -15,6 +15,7 @@ import java.lang.reflect.Method;
  * @author 黄朝博
  */
 public abstract class BaseServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -30,6 +31,7 @@ public abstract class BaseServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

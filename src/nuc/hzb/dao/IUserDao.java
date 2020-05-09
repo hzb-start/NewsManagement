@@ -6,6 +6,8 @@ import nuc.hzb.entity.User;
  * @author 黄朝博
  */
 public interface IUserDao {
+
+
     /**
      * ss
      * @param user

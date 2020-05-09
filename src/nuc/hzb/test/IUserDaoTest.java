@@ -35,6 +35,7 @@ public class IUserDaoTest {
         }
     }
 
+
     /**
      * 成功则显示
      * User{id='huang', name='黄朝博', password='19990508', salt='test', sex='男', email='344728800@qq.com', date=2020-05-07}
@@ -44,6 +45,7 @@ public class IUserDaoTest {
         System.out.println(iUserDao.queryUserByIdAndPassword("huang", "19990508"));
     }
 
+
     /**
      * 存在该id显示true，不存在则显示false
      */
@@ -52,9 +54,11 @@ public class IUserDaoTest {
         System.out.println(iUserDao.queryUserById("黄"));
     }
 
+
     @Test
     public void querySaltById() {
         System.out.println(iUserDao.querySaltById("huang"));
 
     }
+
 }

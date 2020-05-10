@@ -48,6 +48,33 @@ public class NewsDaoImpl implements INewsDao {
 
 
     @Override
+    public List<News> queryAllNews() {
+        // 由于返回值为List集合所以，news设置为null，会被警告为没有使用该值
+        News news = null;
+        List<News> newsList = new ArrayList<>();
+        String sql = "select * from t_news";
+        ResultSet resultSet = JdbcUtils.executeQuery(sql, null);
+        try {
+            while (resultSet.next()) {
+                news = new News(resultSet.getInt("id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("author"),
+                        resultSet.getString("content"),
+                        resultSet.getDate("enterdate"),
+                        resultSet.getInt("hot"),
+                        resultSet.getString("img_path"));
+                newsList.add(news);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
+        }
+        return newsList;
+    }
+
+
+    @Override
     public News queryNewsById(int id) {
         News news = null;
         String sql = "select * from t_news where id = ?";
@@ -73,29 +100,4 @@ public class NewsDaoImpl implements INewsDao {
     }
 
 
-    @Override
-    public List<News> queryAllNews() {
-        // 由于返回值为List集合所以，news设置为null，会被警告为没有使用该值
-        News news = null;
-        List<News> newsList = new ArrayList<>();
-        String sql = "select * from t_news";
-        ResultSet resultSet = JdbcUtils.executeQuery(sql, null);
-        try {
-            while (resultSet.next()) {
-                news = new News(resultSet.getInt("id"),
-                        resultSet.getString("title"),
-                        resultSet.getString("author"),
-                        resultSet.getString("content"),
-                        resultSet.getDate("enterdate"),
-                        resultSet.getInt("hot"),
-                        resultSet.getString("img_path"));
-                newsList.add(news);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
-        }
-        return newsList;
-    }
 }

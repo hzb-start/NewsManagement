@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>编辑新闻</title>
-    <%--    静态包含css、jQuery文件--%>
     <%@ include file="/pages/common/head_base.jsp"%>
     <style type="text/css">
         h1 {
@@ -20,34 +19,47 @@
     </style>
 </head>
 <body>
+
 <div id="header">
     <img class="logo_img" alt="" src="static/img/logo.gif">
     <span class="wel_word">编辑新闻</span>
     <%@ include file="/pages/common/manager_menu.jsp"%>
 </div>
 
+<div align="center">
+    ${empty param.id?"addNews":"updateNews"}
+</div>
+
 <div id="main">
-    <form action="newsServlet?action=addNews" >
+    <form action="manager/newsServlet" method="post">
+        <input type="hidden" name="action" value="${empty param.id?"addNews":"updateNews"}"/>
         <table>
             <tr>
                 <td>title</td>
                 <td>author</td>
-                <td>hot</td>
                 <td colspan="2">操作</td>
             </tr>
             <tr>
-                <td><input name="title" type="text" value="title"/></td>
-                <td><input name="author" type="text" value="author"/></td>
-                <td><input name="content" type="text" value="content"/></td>
+                <input  name="id" type="hidden" value="${requestScope.news.id}"/>
+<%--                <input  name="enterdate" type="hidden" value="${requestScope.news.enterdate.toString()}"/>--%>
+<%--                <input  name="hot" type="hidden" value="${requestScope.news.hot.toString()}"/>--%>
+<%--                <input  name="enterdate" type="hidden" value="${requestScope.news.enterdate}"/>--%>
+<%--                <input  name="hot" type="hidden" value="${requestScope.news.hot}"/>--%>
+                <td><input name="title" type="text" value="${requestScope.news.title}"/></td>
+                <td><input name="author" type="text" value="${requestScope.news.author}"/></td>
                 <td><input type="submit" value="提交"/></td>
             </tr>
         </table>
-        <textarea name="content" cols="55" rows="15">content</textarea>
+
+        <div align="center">
+            <textarea name="content" cols="70" rows="12">${requestScope.news.content}</textarea>
+        </div>
+
     </form>
 
 
 </div>
 
-<%@ include file="pages/common/footer.jsp"%>
+<%@ include file="/pages/common/footer.jsp"%>
 </body>
 </html>

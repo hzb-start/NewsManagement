@@ -6,6 +6,7 @@ import java.util.Date;
  * @author 黄朝博
  */
 public class News {
+
     private int id;
     private String title;
     private String author;
@@ -14,7 +15,9 @@ public class News {
     private int hot;
     private String img_path;
 
+
     public News() { }
+
 
     public News(int id, String title, String author, String content, Date enterdate, int hot) {
         this.id = id;
@@ -24,6 +27,7 @@ public class News {
         this.enterdate = enterdate;
         this.hot = hot;
     }
+
 
     public int getId() {
         return id;
@@ -102,5 +106,14 @@ public class News {
                 ", enterdate=" + enterdate +
                 ", hot=" + hot +
                 '}';
+    }
+
+
+    // 测试参数问题
+
+    public News(String title, String author, String content) {
+        this.title = title;
+        this.author = author;
+        this.content = content;
     }
 }

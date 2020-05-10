@@ -33,6 +33,14 @@ public interface INewsDao {
     int updateNews(News news);
 
 
+
+    /**
+     * 查询所有新闻
+     * @return 集合的形式返回
+     */
+    List<News> queryAllNews();
+
+
     /**
      * 通过id查询单条新闻详情
      * @param id
@@ -41,10 +49,6 @@ public interface INewsDao {
     News queryNewsById(int id);
 
 
-    /**
-     * 查询所有新闻
-     * @return 集合的形式返回
-     */
-    List<News> queryAllNews();
+
 
 }

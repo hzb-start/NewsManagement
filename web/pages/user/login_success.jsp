@@ -25,7 +25,7 @@
 			<%@include file="/pages/common/login_success_menu.jsp"%>
 		</div>
 		<div id="main">
-			<h1>欢迎回来 <a href="index_base.jsp">转到主页</a></h1>
+			<h1>欢迎回来 <a href="index.jsp">转到主页</a></h1>
 		</div>
 		<%@ include file="/pages/common/footer.jsp"%>
 </body>

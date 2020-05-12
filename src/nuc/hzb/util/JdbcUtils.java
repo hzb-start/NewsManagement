@@ -1,5 +1,7 @@
 package nuc.hzb.util;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
@@ -33,6 +35,22 @@ public class JdbcUtils {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
+
+
+    /**
+     * 待完成
+     * 用c3p0数据库连接池完成
+     * @return Connection
+     */
+    public static Connection getConnectionByC3P0() {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource("config");
+        try {
+            connection = dataSource.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -88,6 +106,7 @@ public class JdbcUtils {
      *
      * @return
      */
+    @Deprecated
     public static Statement getStatement() {
         try {
             statement = getConnection().createStatement();

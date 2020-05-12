@@ -1,6 +1,7 @@
 package nuc.hzb.test;
 
 import nuc.hzb.entity.News;
+import nuc.hzb.entity.Page;
 import nuc.hzb.service.INewsService;
 import nuc.hzb.service.impl.NewsServiceImpl;
 import org.junit.Test;
@@ -64,5 +65,11 @@ public class INewsServiceTest {
     @Test
     public void queryAllNews() {
         System.out.println(iNewsService.queryAllNews());
+    }
+
+
+    @Test
+    public void page() {
+        System.out.println(iNewsService.page(1, 2));
     }
 }

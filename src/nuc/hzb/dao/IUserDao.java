@@ -7,13 +7,13 @@ import nuc.hzb.entity.User;
  */
 public interface IUserDao {
 
-
     /**
      * ss
      * @param user
      * @return
      */
     int addUser(User user);
+
 
     /**
      * ss
@@ -22,6 +22,7 @@ public interface IUserDao {
      * @return
      */
     User queryUserByIdAndPassword(String id, String password);
+
 
     /**
      * 11
@@ -37,6 +38,5 @@ public interface IUserDao {
      * @return
      */
     String querySaltById(String id);
-
 
 }

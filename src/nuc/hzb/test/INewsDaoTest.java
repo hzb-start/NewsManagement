@@ -8,8 +8,6 @@ import org.junit.Test;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * @author 黄朝博
  */
@@ -61,4 +59,25 @@ public class INewsDaoTest {
         News news = iNewsDao.queryNewsById(35);
         System.out.println(news);
     }
+
+
+    @Test
+    public void queryForPageTotalCount() {
+        Integer integer = iNewsDao.queryForPageTotalCount();
+        System.out.println(integer);
+    }
+
+
+    /**
+     * begin 0 1 2 ... 开始
+     * 对应于数据库的第1 2 3条记录
+     */
+    @Test
+    public void queryForPageItems() {
+        List<News> newsList = iNewsDao.queryForPageItems(0, 3);
+        for (News news : newsList) {
+            System.out.println(news);
+        }
+    }
+
 }

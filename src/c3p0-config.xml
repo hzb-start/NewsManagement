@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <default>
+        <!--如果要研究某个xml中可以设置那些属性，找相关类的属性或者找setXxx()-->
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/db_news2020</property>
+        <property name="user">root</property>
+        <property name="password">Huang</property>
+        <property name="checkoutTimeout">3000</property>
+    </default>
+    <!--named-config的优先级更高-->
+    <named-config name="config">
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/db_news2020?useSSL=false</property>
+        <property name="user">root</property>
+        <property name="password">Huang</property>
+        <property name="checkoutTimeout">2000</property>
+    </named-config>
+</c3p0-config>

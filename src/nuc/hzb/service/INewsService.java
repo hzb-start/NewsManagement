@@ -1,6 +1,7 @@
 package nuc.hzb.service;
 
 import nuc.hzb.entity.News;
+import nuc.hzb.entity.Page;
 
 import java.util.List;
 
@@ -45,5 +46,14 @@ public interface INewsService {
      * @return
      */
     List<News> queryAllNews();
+
+
+    /**
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    Page<News> page(int pageNo, int pageSize);
 
 }

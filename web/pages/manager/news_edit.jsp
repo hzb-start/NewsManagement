@@ -32,6 +32,7 @@
 
 <div id="main">
     <form action="manager/newsServlet" method="post">
+        <input type="hidden" name="pageNo" value="${param.pageNo}">
         <input type="hidden" name="action" value="${empty param.id?"addNews":"updateNews"}"/>
         <table>
             <tr>

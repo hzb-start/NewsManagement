@@ -29,25 +29,26 @@
 					您刚刚观看了<span style="color: red">黄朝博</span>的这条新闻
 				</div>
 			</div>
+
 			<div class="b_list">
 				<div class="img_div">
-					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
+					<img class="book_img" alt="Big Boat" src="static/img/xiaobai.jpg" />
 				</div>
 				<div class="book_info">
 					<div class="book_name">
-						<span class="sp1">id:</span>
+						<span class="sp1">标题:</span>
 						<span class="sp2">新闻标题</span>
 					</div>
 					<div class="book_author">
-						<span class="sp1">待定:</span>
-						<span class="sp2">作者</span>
+						<span class="sp1">作者:</span>
+						<span class="sp2">新闻作者</span>
 					</div>
 					<div class="book_price">
-						<span class="sp1">待定:</span>
-						<span class="sp2">XXX</span>
+						<span class="sp1">热度:</span>
+						<span class="sp2">232</span>
 					</div>
 					<div class="book_sales">
-						<span class="sp1">销量:</span>
+						<span class="sp1">热度:</span>
 						<span class="sp2">230</span>
 					</div>
 					<div class="book_amount">
@@ -66,7 +67,38 @@
 				</div>
 				<div class="book_info">
 					<div class="book_name">
-						<span class="sp1">id:</span>
+						<span class="sp1">标题:</span>
+						<span class="sp2">新闻标题</span>
+					</div>
+					<div class="book_author">
+						<span class="sp1">作者:</span>
+						<span class="sp2">新闻作者</span>
+					</div>
+					<div class="book_price">
+						<span class="sp1">新闻时间:</span>
+						<span class="sp2">254</span>
+					</div>
+					<div class="book_sales">
+						<span class="sp1">热度:</span>
+						<span class="sp2">230</span>
+					</div>
+					<div class="book_amount">
+						<span class="sp1">热度:</span>
+						<span class="sp2">1000</span>
+					</div>
+					<div class="book_add">
+						<button>查看详情</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="b_list">
+				<div class="img_div">
+					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
+				</div>
+				<div class="book_info">
+					<div class="book_name">
+						<span class="sp1">标题:</span>
 						<span class="sp2">新闻标题</span>
 					</div>
 					<div class="book_author">
@@ -78,7 +110,7 @@
 						<span class="sp2">XXX</span>
 					</div>
 					<div class="book_sales">
-						<span class="sp1">销量:</span>
+						<span class="sp1">热度:</span>
 						<span class="sp2">230</span>
 					</div>
 					<div class="book_amount">
@@ -93,11 +125,11 @@
 			
 			<div class="b_list">
 				<div class="img_div">
-					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
+					<img class="book_img" alt="" src="static/img/xiaobai4.jpg" />
 				</div>
 				<div class="book_info">
 					<div class="book_name">
-						<span class="sp1">id:</span>
+						<span class="sp1">标题:</span>
 						<span class="sp2">新闻标题</span>
 					</div>
 					<div class="book_author">
@@ -109,38 +141,7 @@
 						<span class="sp2">XXX</span>
 					</div>
 					<div class="book_sales">
-						<span class="sp1">销量:</span>
-						<span class="sp2">230</span>
-					</div>
-					<div class="book_amount">
 						<span class="sp1">热度:</span>
-						<span class="sp2">1000</span>
-					</div>
-					<div class="book_add">
-						<button>查看详情</button>
-					</div>
-				</div>
-			</div>
-			
-			<div class="b_list">
-				<div class="img_div">
-					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
-				</div>
-				<div class="book_info">
-					<div class="book_name">
-						<span class="sp1">id:</span>
-						<span class="sp2">新闻标题</span>
-					</div>
-					<div class="book_author">
-						<span class="sp1">待定:</span>
-						<span class="sp2">作者</span>
-					</div>
-					<div class="book_price">
-						<span class="sp1">待定:</span>
-						<span class="sp2">XXX</span>
-					</div>
-					<div class="book_sales">
-						<span class="sp1">销量:</span>
 						<span class="sp2">230</span>
 					</div>
 					<div class="book_amount">

@@ -49,6 +49,8 @@ public interface INewsDao {
     News queryNewsById(int id);
 
 
+    Integer queryForPageTotalCount();
 
+    List<News> queryForPageItems(int begin, int pageSize);
 
 }

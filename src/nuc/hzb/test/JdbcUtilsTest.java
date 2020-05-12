@@ -86,4 +86,13 @@ public class JdbcUtilsTest {
         }
         System.out.println(name + ":" +password);
     }
+
+
+    /**
+     * c3p0数据库连接池测试成功
+     */
+    @Test
+    public void getConnectionByC3P0() {
+        System.out.println(JdbcUtils.getConnectionByC3P0());
+    }
 }

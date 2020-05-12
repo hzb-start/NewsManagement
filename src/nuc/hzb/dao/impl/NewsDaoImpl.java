@@ -53,7 +53,7 @@ public class NewsDaoImpl implements INewsDao {
         News news = null;
         List<News> newsList = new ArrayList<>();
         String sql = "select * from t_news";
-        ResultSet resultSet = JdbcUtils.executeQuery(sql, null);
+        ResultSet resultSet = JdbcUtils.executeQuery(sql);
         try {
             while (resultSet.next()) {
                 news = new News(resultSet.getInt("id"),
@@ -80,8 +80,9 @@ public class NewsDaoImpl implements INewsDao {
         String sql = "select * from t_news where id = ?";
         Object[] params = {id};
         ResultSet resultSet = JdbcUtils.executeQuery(sql, params);
+        // 单个查询用if判断即可，如果查询所有值将用while
+        // 但是为了能将相同的代码整合，这个可以使用while
         try {
-            // 单个查询用if判断即可，如果查询所有值将用while
             if (resultSet.next()) {
                 news = new News(resultSet.getInt("id"),
                         resultSet.getString("title"),
@@ -100,4 +101,46 @@ public class NewsDaoImpl implements INewsDao {
     }
 
 
+    @Override
+    public Integer queryForPageTotalCount() {
+        Integer count = null;
+        String sql = "select count(*) from t_news";
+        ResultSet resultSet = JdbcUtils.executeQuery(sql);
+        try {
+            if (resultSet.next()) {
+                count = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
+        }
+        return count;
+    }
+
+    @Override
+    public List<News> queryForPageItems(int begin, int pageSize) {
+        News news = null;
+        List<News> newsList = new ArrayList<>();
+        String sql = "select * from t_news limit ?, ?";
+        Object[] params = {begin, pageSize};
+        ResultSet resultSet = JdbcUtils.executeQuery(sql, params);
+        try {
+            while (resultSet.next()) {
+                news = new News(resultSet.getInt("id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("author"),
+                        resultSet.getString("content"),
+                        resultSet.getDate("enterdate"),
+                        resultSet.getInt("hot"),
+                        resultSet.getString("img_path"));
+                newsList.add(news);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
+        }
+        return newsList;
+    }
 }

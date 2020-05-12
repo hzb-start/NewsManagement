@@ -105,9 +105,9 @@ public class News {
                 ", content='" + content + '\'' +
                 ", enterdate=" + enterdate +
                 ", hot=" + hot +
+                ", img_path='" + img_path + '\'' +
                 '}';
     }
-
 
     // 测试参数问题
 

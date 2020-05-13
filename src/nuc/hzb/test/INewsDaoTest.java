@@ -80,4 +80,20 @@ public class INewsDaoTest {
         }
     }
 
+
+    @Test
+    public void queryForPageTotalCountByTitle() {
+        Integer integer = iNewsDao.queryForPageTotalCountByTitle("黄");
+        System.out.println(integer);
+    }
+
+
+    @Test
+    public void queryForPageItemsByTitle() {
+        List<News> newsList = iNewsDao.queryForPageItemsByTitle(0, 3, "黄朝");
+        for (News news : newsList) {
+            System.out.println(news);
+        }
+    }
+
 }

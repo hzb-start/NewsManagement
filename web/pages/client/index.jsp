@@ -18,16 +18,18 @@
 	<div id="main">
 		<div id="news">
 			<div class="news_cond">
-				<form action="" method="get">
-					标题：<input id="min" type="text" name="min" value="">  - 2
-						<input id="max" type="text" name="max" value=""> 1
+				<form action="client/newsServlet" method="get">
+					<input type="hidden" name="action" value="pageByTitle" />
+					标题：<input id="title" type="text" name="title" value="" />
+<%--						<input id="max" type="text" name="max" value=""> 1--%>
 						<input type="submit" value="查询" />
 				</form>
 			</div>
 			<div style="text-align: center">
-				<span>目前多少条新闻</span>
+				<span>目前共<span style = "color: #FF0000">${requestScope.page.pageTotalCount}</span>条新闻</span>
 				<div>
-					您刚刚观看了<span style="color: red">黄朝博</span>的这条新闻
+					<span style = "color: #0008ff">欢迎关注公众号：二九幂加八</span>
+					<span></span>
 				</div>
 			</div>
 
@@ -35,7 +37,7 @@
 			<c:forEach items="${requestScope.page.items}" var="news">
 			<div class="news_list">
 				<div class="img_div">
-					<img class="news_img" alt="" src="" />
+					<img class="news_img" alt="图片待上传" src="${news.img_path}" />
 				</div>
 				<div class="news_info">
 <%--					<div class="news_name">--%>
@@ -97,9 +99,6 @@
 				$(function () {
 					$("#queryPageButton").click(function () {
 						var pageNo = $("#pn_input").val();
-
-						<%--var pageTotal = ${requestScope.page.pageTotal};--%>
-						<%--alert(pageTotal);--%>
 						location.href = "${pageScope.basePath}client/newsServlet?action=page&pageNo=" + pageNo;
 					})
 				})

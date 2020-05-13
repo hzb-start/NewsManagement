@@ -76,4 +76,22 @@ public class NewsServiceImpl implements INewsService {
 
         return page;
     }
+
+    @Override
+    public Page<News> pageByTitle(int pageNo, int pageSize, String title) {
+        Page<News> page = new Page<>();
+        page.setPageSize(pageSize);
+        Integer pageTotalCount = iNewsDao.queryForPageTotalCountByTitle(title);
+        page.setPageTotalCount(pageTotalCount);
+        Integer pageTotal = pageTotalCount / pageSize;
+        if (pageTotalCount % pageSize > 0) {
+            pageTotal += 1;
+        }
+        page.setPageTotal(pageTotal);
+        page.setPageNo(pageNo);
+        int begin = (page.getPageNo() - 1) * pageSize;
+        List<News> items = iNewsDao.queryForPageItemsByTitle(begin, pageSize, title);
+        page.setItems(items);
+        return page;
+    }
 }

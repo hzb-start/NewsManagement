@@ -26,4 +26,13 @@ public class ClientNewsServlet extends BaseServlet {
         request.getRequestDispatcher("/pages/client/index.jsp").forward(request, response);
     }
 
+
+    protected void pageByTitle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int pageNo = WebUtils.parseInt(request.getParameter("pageNo"), 1);
+        String title = request.getParameter("title");
+        Page<News> page = iNewsService.pageByTitle(pageNo, Page.PAGE_SIZE, title);
+        request.setAttribute("page", page);
+        request.getRequestDispatcher("/pages/client/index.jsp").forward(request, response);
+    }
+
 }

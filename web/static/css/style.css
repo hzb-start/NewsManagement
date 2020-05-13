@@ -64,17 +64,16 @@ div{
 }
 
 .img_div{
-	height: 150px;
+	height: 170px;
 	text-align: center;
 }
 
 .news_img {
-	height:150px;
-	width:150px;
+	height:180px;
+	width:180px;
 }
 
 .news_info {
-	
 	text-align: center;
 }
 

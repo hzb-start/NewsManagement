@@ -56,4 +56,12 @@ public interface INewsService {
      */
     Page<News> page(int pageNo, int pageSize);
 
+    /**
+     *
+     * @param pageNo
+     * @param pageSize
+     * @param title
+     * @return
+     */
+    Page<News> pageByTitle(int pageNo, int pageSize, String title);
 }

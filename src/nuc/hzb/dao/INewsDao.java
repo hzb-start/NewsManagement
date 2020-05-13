@@ -53,4 +53,10 @@ public interface INewsDao {
 
     List<News> queryForPageItems(int begin, int pageSize);
 
+
+
+
+    Integer queryForPageTotalCountByTitle(String title);
+
+    List<News> queryForPageItemsByTitle(int begin, int pageSize, String title);
 }

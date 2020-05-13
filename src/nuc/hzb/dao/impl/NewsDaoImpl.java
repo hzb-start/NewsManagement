@@ -143,4 +143,48 @@ public class NewsDaoImpl implements INewsDao {
         }
         return newsList;
     }
+
+    @Override
+    public Integer queryForPageTotalCountByTitle(String title) {
+        Integer count = null;
+        String sql = "select count(*) from t_news where title like ?";
+        Object[] params = {"%"+title+"%"};
+        ResultSet resultSet = JdbcUtils.executeQuery(sql, params);
+        try {
+            if (resultSet.next()) {
+                count = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
+        }
+        return count;
+    }
+
+    @Override
+    public List<News> queryForPageItemsByTitle(int begin, int pageSize, String title) {
+        News news = null;
+        List<News> newsList = new ArrayList<>();
+        String sql = "select * from t_news where title like ? limit ?, ?";
+        Object[] params = {"%"+title+"%", begin, pageSize};
+        ResultSet resultSet = JdbcUtils.executeQuery(sql, params);
+        try {
+            while (resultSet.next()) {
+                news = new News(resultSet.getInt("id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("author"),
+                        resultSet.getString("content"),
+                        resultSet.getDate("enterdate"),
+                        resultSet.getInt("hot"),
+                        resultSet.getString("img_path"));
+                newsList.add(news);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.closeAll(resultSet, JdbcUtils.preparedStatement, JdbcUtils.connection);
+        }
+        return newsList;
+    }
 }

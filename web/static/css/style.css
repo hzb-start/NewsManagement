@@ -34,14 +34,14 @@ div{
 	text-align: center;
 }
 
-#book{
+#news{
 	width: 100%;
 	height: 90%;
 	margin: auto;
 	
 }
 
-.b_list{
+.news_list{
 	height:300px;
 	width:250px;
 	margin: 20px;
@@ -68,17 +68,17 @@ div{
 	text-align: center;
 }
 
-.book_img {
+.news_img {
 	height:150px;
 	width:150px;
 }
 
-.book_info {
+.news_info {
 	
 	text-align: center;
 }
 
-.book_info div{
+.news_info div{
 	height: 10px;
 	width: 300px;
 	text-align: left;
@@ -103,11 +103,11 @@ div{
 	margin-top: 55px;
 }
 
-.book_cond{
+.news_cond{
 	margin-left: 500px;
 }
 
-.book_cond input{
+.news_cond input{
 	width: 50px;
 	text-align: center;
 }

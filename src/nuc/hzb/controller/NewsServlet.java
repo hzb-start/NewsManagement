@@ -21,18 +21,17 @@ public class NewsServlet extends BaseServlet {
     private INewsService iNewsService = new NewsServiceImpl();
 
     protected void page(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 获取请求的参数pageNo、pageSize
+//        获取请求的参数pageNo、pageSize
+//        1获取请求的参数 pageNo 和 pageSize
 
+        int pageNo = WebUtils.parseInt(request.getParameter("pageNo"), 1);
 
-        // 1获取请求的参数 pageNo 和 pageSize
-        Integer pageNo = WebUtils.parseInt(request.getParameter("pageNo"), 1);
 //        int pageSize = WebUtils.parseInt(request.getParameter("pageSize"), Page.PAGE_SIZE);
-        // 2调用NewsService.page(pageNo，pageSize)：Page对象
+//        2调用NewsService.page(pageNo，pageSize)：Page对象
         Page<News> page = iNewsService.page(pageNo, Page.PAGE_SIZE);
 
 //        page.setUrl("manager/newsServlet?action=page");
-
-//         3保存Page对象到Request域中
+//        3保存Page对象到Request域中
         request.setAttribute("page",page);
         // 4请求转发到pages/manager/news_manager.jsp页面
         request.getRequestDispatcher("/pages/manager/new_manager.jsp").forward(request, response);

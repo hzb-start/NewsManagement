@@ -67,7 +67,7 @@
 
 		</table>
 
-
+<%--		分页条的开始--%>
 		<div id="page_nav">
 
 			<c:if test="${requestScope.page.pageNo>1}">
@@ -76,9 +76,6 @@
 			</c:if>
 
 <%--			页码输出的开始--%>
-
-
-
 			<a href="manager/newsServlet?action=page&pageNo=${requestScope.page.pageNo-1}">${requestScope.page.pageNo-1}</a>
 			【${requestScope.page.pageNo}】
 			<a href="manager/newsServlet?action=page&pageNo=${requestScope.page.pageNo+1}">${requestScope.page.pageNo+1}</a>
@@ -101,15 +98,13 @@
 
 						<%--var pageTotal = ${requestScope.page.pageTotal};--%>
 						<%--alert(pageTotal);--%>
-
-
 						location.href = "${pageScope.basePath}manager/newsServlet?action=page&pageNo=" + pageNo;
 					})
 				})
 			</script>
-
-
 		</div>
+<%--		分页条的结束--%>
+
 	</div>
 	<%@ include file="/pages/common/footer.jsp"%>
 </body>

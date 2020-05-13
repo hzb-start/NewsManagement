@@ -16,8 +16,8 @@
 			</div>
 	</div>
 	<div id="main">
-		<div id="book">
-			<div class="book_cond">
+		<div id="news">
+			<div class="news_cond">
 				<form action="" method="get">
 					标题：<input id="min" type="text" name="min" value="">  - 2
 						<input id="max" type="text" name="max" value=""> 1
@@ -32,30 +32,30 @@
 			</div>
 			<div class="b_list">
 				<div class="img_div">
-					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
+					<img class="news_img" alt="" src="static/img/xiaobai.jpg" />
 				</div>
-				<div class="book_info">
-					<div class="book_name">
+				<div class="news_info">
+					<div class="news_name">
 						<span class="sp1">id:</span>
 						<span class="sp2">新闻标题</span>
 					</div>
-					<div class="book_author">
+					<div class="news_author">
 						<span class="sp1">待定:</span>
 						<span class="sp2">作者</span>
 					</div>
-					<div class="book_price">
+					<div class="news_price">
 						<span class="sp1">待定:</span>
 						<span class="sp2">XXX</span>
 					</div>
-					<div class="book_sales">
+					<div class="news_sales">
 						<span class="sp1">销量:</span>
 						<span class="sp2">230</span>
 					</div>
-					<div class="book_amount">
+					<div class="news_amount">
 						<span class="sp1">热度:</span>
 						<span class="sp2">1000</span>
 					</div>
-					<div class="book_add">
+					<div class="news_add">
 						<button>查看详情</button>
 					</div>
 				</div>
@@ -63,30 +63,30 @@
 			
 			<div class="b_list">
 				<div class="img_div">
-					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
+					<img class="news_img" alt="" src="static/img/xiaobai.jpg" />
 				</div>
-				<div class="book_info">
-					<div class="book_name">
+				<div class="news_info">
+					<div class="news_name">
 						<span class="sp1">id:</span>
 						<span class="sp2">新闻标题</span>
 					</div>
-					<div class="book_author">
+					<div class="news_author">
 						<span class="sp1">待定:</span>
 						<span class="sp2">作者</span>
 					</div>
-					<div class="book_price">
+					<div class="news_price">
 						<span class="sp1">待定:</span>
 						<span class="sp2">XXX</span>
 					</div>
-					<div class="book_sales">
+					<div class="news_sales">
 						<span class="sp1">销量:</span>
 						<span class="sp2">230</span>
 					</div>
-					<div class="book_amount">
+					<div class="news_amount">
 						<span class="sp1">热度:</span>
 						<span class="sp2">1000</span>
 					</div>
-					<div class="book_add">
+					<div class="news_add">
 						<button>查看详情</button>
 					</div>
 				</div>
@@ -94,30 +94,30 @@
 			
 			<div class="b_list">
 				<div class="img_div">
-					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
+					<img class="news_img" alt="" src="static/img/xiaobai.jpg" />
 				</div>
-				<div class="book_info">
-					<div class="book_name">
+				<div class="news_info">
+					<div class="news_name">
 						<span class="sp1">id:</span>
 						<span class="sp2">新闻标题</span>
 					</div>
-					<div class="book_author">
+					<div class="news_author">
 						<span class="sp1">待定:</span>
 						<span class="sp2">作者</span>
 					</div>
-					<div class="book_price">
+					<div class="news_price">
 						<span class="sp1">待定:</span>
 						<span class="sp2">XXX</span>
 					</div>
-					<div class="book_sales">
+					<div class="news_sales">
 						<span class="sp1">销量:</span>
 						<span class="sp2">230</span>
 					</div>
-					<div class="book_amount">
+					<div class="news_amount">
 						<span class="sp1">热度:</span>
 						<span class="sp2">1000</span>
 					</div>
-					<div class="book_add">
+					<div class="news_add">
 						<button>查看详情</button>
 					</div>
 				</div>
@@ -125,30 +125,30 @@
 			
 			<div class="b_list">
 				<div class="img_div">
-					<img class="book_img" alt="" src="static/img/xiaobai.jpg" />
+					<img class="news_img" alt="" src="static/img/xiaobai.jpg" />
 				</div>
-				<div class="book_info">
-					<div class="book_name">
+				<div class="news_info">
+					<div class="news_name">
 						<span class="sp1">id:</span>
 						<span class="sp2">新闻标题</span>
 					</div>
-					<div class="book_author">
+					<div class="news_author">
 						<span class="sp1">待定:</span>
 						<span class="sp2">作者</span>
 					</div>
-					<div class="book_price">
+					<div class="news_price">
 						<span class="sp1">待定:</span>
 						<span class="sp2">XXX</span>
 					</div>
-					<div class="book_sales">
+					<div class="news_sales">
 						<span class="sp1">销量:</span>
 						<span class="sp2">230</span>
 					</div>
-					<div class="book_amount">
+					<div class="news_amount">
 						<span class="sp1">热度:</span>
 						<span class="sp2">1000</span>
 					</div>
-					<div class="book_add">
+					<div class="news_add">
 						<button>查看详情</button>
 					</div>
 				</div>

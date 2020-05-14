@@ -3,15 +3,12 @@ package nuc.hzb.controller;
 import nuc.hzb.entity.User;
 import nuc.hzb.service.IUserService;
 import nuc.hzb.service.impl.UserServiceImpl;
-
-import org.apache.commons.codec.digest.DigestUtils;
+import nuc.hzb.util.WebUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
-
 import java.util.Date;
 import java.util.UUID;
 
@@ -32,9 +29,10 @@ public class UserServlet extends BaseServlet {
         String realPassword = request.getParameter("password");
         IUserService iUserService = new UserServiceImpl();
         String salt = iUserService.querySalt(id);
-        String password = DigestUtils.sha256Hex(realPassword + salt);
+        String password = WebUtils.encryptPassword(realPassword + salt);
         User user = iUserService.login(id, password);
         if (user != null) {
+            request.getSession().setAttribute("user", user);
             System.out.println("登录成功！");
             request.getRequestDispatcher("pages/user/login_success.jsp").forward(request, response);
         } else {
@@ -61,7 +59,7 @@ public class UserServlet extends BaseServlet {
         String sex = request.getParameter("sex");
         String email = request.getParameter("email");
         Date date = new Date();
-        String password = DigestUtils.sha256Hex(realPassword + salt);
+        String password = WebUtils.encryptPassword(realPassword + salt);
         User user = new User(id, name, password, salt, sex, email, date);
         IUserService iUserService = new UserServiceImpl();
         int register = iUserService.register(user);
@@ -76,6 +74,12 @@ public class UserServlet extends BaseServlet {
             System.out.println("注册成功！");
             request.getRequestDispatcher("pages/user/register_success.jsp").forward(request, response);
         }
+    }
+
+
+    protected void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       request.getSession().invalidate();
+       response.sendRedirect(request.getContextPath());
     }
 //    @Override
 //    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

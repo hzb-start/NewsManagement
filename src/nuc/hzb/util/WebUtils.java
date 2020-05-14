@@ -52,7 +52,7 @@ public class WebUtils {
      * @param data 该项目中指的是realPassword用户真正的密码+salt
      * @return db_password 数据库中存放的密码（md5格式）
      */
-    public String encryptPassword(String data) {
+    public static String encryptPassword(String data) {
         String db_password = null;
         String sha256Hex = DigestUtils.sha256Hex(data);
         String toUpperCase = sha256Hex.toUpperCase();

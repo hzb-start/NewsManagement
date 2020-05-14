@@ -10,8 +10,15 @@
 			<img class="logo_img" alt="" src="static/img/logo.gif" >
 			<span class="wel_word">新闻资讯</span>
 			<div>
-				<a href="pages/user/login.jsp">登录</a> |
-				<a href="pages/user/register.jsp">注册</a> &nbsp;&nbsp;
+				<c:if test="${empty sessionScope.user}">
+					<a href="pages/user/login.jsp">登录</a> |
+					<a href="pages/user/register.jsp">注册</a> &nbsp;&nbsp;
+				</c:if>
+
+				<c:if test="${not empty sessionScope.user}">
+					<span>欢迎<span class="um_span">${sessionScope.user.name}</span>新闻管理系统</span>
+					<a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
+				</c:if>
 				<a href="pages/manager/manager.jsp">后台管理</a>
 			</div>
 	</div>

@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * @author 黄朝博
  */
-public class DataType {
+public class DataTypeTest {
 
     @Test
     public void Test() {

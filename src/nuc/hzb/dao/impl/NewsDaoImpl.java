@@ -122,7 +122,10 @@ public class NewsDaoImpl implements INewsDao {
     public List<News> queryForPageItems(int begin, int pageSize) {
         News news = null;
         List<News> newsList = new ArrayList<>();
-        String sql = "select * from t_news limit ?, ?";
+//        String sql = "select * from t_news limit ?, ?";
+
+        // 根据热度降序排列
+        String sql = "select * from t_news order by hot desc limit ?, ?";
         Object[] params = {begin, pageSize};
         ResultSet resultSet = JdbcUtils.executeQuery(sql, params);
         try {
@@ -166,7 +169,8 @@ public class NewsDaoImpl implements INewsDao {
     public List<News> queryForPageItemsByTitle(int begin, int pageSize, String title) {
         News news = null;
         List<News> newsList = new ArrayList<>();
-        String sql = "select * from t_news where title like ? limit ?, ?";
+        // 根据热度降序排列
+        String sql = "select * from t_news where title like ? order by hot desc limit ?, ?";
         Object[] params = {"%"+title+"%", begin, pageSize};
         ResultSet resultSet = JdbcUtils.executeQuery(sql, params);
         try {

@@ -82,7 +82,9 @@ public class NewsServiceImpl implements INewsService {
         Page<News> page = new Page<>();
         page.setPageSize(pageSize);
         Integer pageTotalCount = iNewsDao.queryForPageTotalCountByTitle(title);
+
         page.setPageTotalCount(pageTotalCount);
+
         Integer pageTotal = pageTotalCount / pageSize;
         if (pageTotalCount % pageSize > 0) {
             pageTotal += 1;

@@ -11,7 +11,7 @@
 
             <span style="color: #ff2768">邮箱：<span>
                 344728800@qq.com<br>
-            <span style="color: #2526ff">Github：<span>
+            <span style="color: #2526ff">GitHub：<span>
                 <a href="https://github.com/hzb-start" target="_blank" rel="nofollow">https://github.com/hzb-start</a><br>
             <span style="color: #ffa618">Gitee：<span>
                 <a href="https://gitee.com/hzb-start" target="_blank" rel="nofollow">https://gitee.com/hzb-start</a><br>

@@ -90,7 +90,7 @@ public class INewsDaoTest {
 
     @Test
     public void queryForPageItemsByTitle() {
-        List<News> newsList = iNewsDao.queryForPageItemsByTitle(0, 3, "黄朝");
+        List<News> newsList = iNewsDao.queryForPageItemsByTitle(0, 3, "我的");
         for (News news : newsList) {
             System.out.println(news);
         }
